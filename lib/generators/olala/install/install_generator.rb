@@ -14,6 +14,12 @@ module Olala
         puts 'copying aloha into public/ ...'
         directory 'aloha', 'public/aloha/'
         puts 'Aloha jquery plugin is now installed in public/aloha'
+      end
+
+      def copy_olala
+        say_status("copying", "olala", :green)
+        copy_file "javascripts/olala.js", "app/assets/javascripts/olala.js"
+
         puts ''
         puts 'To use olala, you need to:'
         puts ' - add jquery in your javascript dependencies'

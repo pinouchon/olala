@@ -13,10 +13,29 @@ And then execute:
     $ bundle
     $ rails g olala:install
 
-You need:
+    Add `require olala` at the end of `app/assets/javascripts/application.js`
+
+   Add this in `application.html.erb` before `</head>` tag
+    ```
+      <% if session[:admin] %>
+          <link rel="stylesheet" href="/aloha/css/aloha.css" type="text/css">
+          <script src="/aloha/lib/require.js"></script>
+          <script src="/aloha/lib/vendor/jquery-1.7.2.js"></script>
+          <script src="/aloha/lib/aloha.js" data-aloha-plugins="common/ui,common/format,common/table,common/list,common/highlighteditables,common/link,common/image,common/block,common/undo"></script>
+      <% end %>
+    ```
+
+    Change your body tag to: `<body class='<%= 'admin' if session[:admin] %>'>`
+
+    Replace each block that you want to make dynamic:
+
+    `<p>Static text</p>`
+    =>
+    `<p>dynamic('Static text')</p>`
+
+Make sure that you have:
 
  - jquery in your javascript dependencies'
- - "require olala" in app/assets/javascripts/application.js'
  - a database with activeRecord (pg, mysql, sqlite), jquery
 
 ## Usage:
