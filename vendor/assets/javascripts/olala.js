@@ -32,7 +32,7 @@ var Olala = {
           data['content'] = content;
           $.ajax({
             type: "POST",
-            url: '/labels',
+            url: '/olala/labels',
             data: data,
             success: function () {
               console.log('success', 'Modifications enregistrées');

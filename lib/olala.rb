@@ -1,10 +1,13 @@
 require "olala/version"
 
 module Olala
-  # Your code goes here...
   module Controllers
     #autoload :Rememberable, 'devise/controllers/rememberable'
     autoload :Labels, 'olala/controllers'
+  end
+
+  class Engine < Rails::Engine
+    config.autoload_paths << File.expand_path("../app", __FILE__)
   end
 
   module CustomAuth

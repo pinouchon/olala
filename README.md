@@ -31,7 +31,10 @@ And then execute:
 
     `<p>Static text</p>`
     =>
-    `<p>dynamic('Static text')</p>`
+    `<p>Olala::editable('my_title', 'Static text')</p>`
+
+    Load helpers:
+    `helper Olala::ApplicationHelper` in application_helper.rb
 
 Make sure that you have:
 
