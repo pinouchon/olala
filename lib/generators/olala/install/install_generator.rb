@@ -13,7 +13,13 @@ module Olala
       def add_assets
         puts 'copying aloha into public/ ...'
         directory 'aloha', 'public/aloha/'
-        puts 'done copying aloha into public'
+        puts 'Aloha jquery plugin is now installed in public/aloha'
+        puts ''
+        puts 'To use olala, you need to:'
+        puts ' - add jquery in your javascript dependencies'
+        puts ' - add "require olala" in app/assets/javascripts/application.js'
+        puts ''
+        puts 'More info at https://github.com/pinouchon/olala'
       end
 
     end

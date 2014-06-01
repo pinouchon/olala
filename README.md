@@ -1,6 +1,6 @@
 # Olala
 
-TODO: Write a gem description
+Dynamic content edition for rails
 
 ## Installation
 
@@ -11,14 +11,17 @@ Add this line to your application's Gemfile:
 And then execute:
 
     $ bundle
+    $ rails g olala:install
 
-Or install it yourself as:
+You need:
 
-    $ gem install olala
+ - jquery in your javascript dependencies'
+ - "require olala" in app/assets/javascripts/application.js'
+ - a database with activeRecord (pg, mysql, sqlite), jquery
 
-## Usage
+## Usage:
 
-TODO: Write usage instructions here
+todo
 
 ## Contributing
 
