@@ -27,9 +27,9 @@ Add this in `application.html.erb` before `</head>` tag
 
 Change your body tag to: `<body class='<%= 'admin' if session[:admin] %>'>`
 
-Load helpers (in in application_helper.rb) :
+Load the temporary auth mechanism (in application_controller.rb) :
 
-    helper Olala::ApplicationHelper
+    include Olala::CustomAuth
 
 
 Make sure that you have:

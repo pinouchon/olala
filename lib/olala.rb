@@ -20,7 +20,7 @@ module Olala
     end
 
     def custom_auth
-      if params[:admin] == 'secretpass42'
+      if params[:admin] == (ENV['OLALA_PASSWORD'] || 'secretpass42')
         session[:admin] = true
       end
       if params[:admin] == ''
