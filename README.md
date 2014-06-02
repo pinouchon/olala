@@ -12,30 +12,25 @@ And then execute:
 
     $ bundle
     $ rails g olala:install
+    $ rake db:migrate
 
-    Add `require olala` at the end of `app/assets/javascripts/application.js`
+Add `require olala` at the end of `app/assets/javascripts/application.js`
 
-   Add this in `application.html.erb` before `</head>` tag
+Add this in `application.html.erb` before `</head>` tag
 
-```
-      <% if session[:admin] %>
-          <link rel="stylesheet" href="/aloha/css/aloha.css" type="text/css">
-          <script src="/aloha/lib/require.js"></script>
-          <script src="/aloha/lib/vendor/jquery-1.7.2.js"></script>
-          <script src="/aloha/lib/aloha.js" data-aloha-plugins="common/ui,common/format,common/table,common/list,common/highlighteditables,common/link,common/image,common/block,common/undo"></script>
-      <% end %>
-```
+    <% if session[:admin] %>
+        <link rel="stylesheet" href="/aloha/css/aloha.css" type="text/css">
+        <script src="/aloha/lib/require.js"></script>
+        <script src="/aloha/lib/vendor/jquery-1.7.2.js"></script>
+        <script src="/aloha/lib/aloha.js" data-aloha-plugins="common/ui,common/format,common/table,common/list,common/highlighteditables,common/link,common/image,common/block,common/undo"></script>
+    <% end %>
 
-   Change your body tag to: `<body class='<%= 'admin' if session[:admin] %>'>`
+Change your body tag to: `<body class='<%= 'admin' if session[:admin] %>'>`
 
-    Replace each block that you want to make dynamic:
+Load helpers (in in application_helper.rb) :
 
-    `<p>Static text</p>`
-    =>
-    `<p>Olala::editable('my_title', 'Static text')</p>`
+    helper Olala::ApplicationHelper
 
-    Load helpers:
-    `helper Olala::ApplicationHelper` in application_helper.rb
 
 Make sure that you have:
 
@@ -44,7 +39,11 @@ Make sure that you have:
 
 ## Usage:
 
-todo
+Replace each block that you want to make dynamic:
+
+    <p>Static text</p>
+    to
+    <p>Olala::editable('my_title', 'Static text')</p>
 
 ## Contributing
 
