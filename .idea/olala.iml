@@ -13,6 +13,7 @@
     <content url="file://$MODULE_DIR$" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" scope="PROVIDED" name="olala (v0.0.1, /Users/pinouchon/code/olala) [path][gem]" level="application" />
   </component>
 </module>
 

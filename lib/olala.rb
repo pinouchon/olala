@@ -31,13 +31,15 @@ module Olala
   end
 
   module Helpers
-    def editable(label, default = 'undefined', &block)
+    def editable(label, default = nil, &block)
       if block_given?
-        raw "<div class='editable' data-label='#{label.to_s}'>" +
-                Olala::Label.retrieve(label, capture(&block)) +
-                '</div>'.html_safe
+        label, content = Olala::Label.retrieve(label, capture(&block))
+        return raw "<div class='editable' data-label='#{label.to_s}'>" +
+                       content.to_s +
+                       '</div>'.html_safe
       else
-        raw "<div class='editable' data-label='#{label.to_s}'>#{Olala::Label.retrieve(label, default)}</div>".html_safe
+        label, content = Olala::Label.retrieve(label, default)
+        return raw "<div class='editable' data-label='#{label.to_s}'>#{content.to_s}</div>".html_safe
       end
     end
   end

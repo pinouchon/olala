@@ -6,7 +6,6 @@ var Olala = {
   },
 
   isAdmin: function () {
-    return true;
     return $('body').hasClass('admin');
   },
 
